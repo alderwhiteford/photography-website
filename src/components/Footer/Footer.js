@@ -1,3 +1,5 @@
+'use client'
+
 import styled from "styled-components"
 
 const FooterContainer = styled.footer`
@@ -33,8 +35,8 @@ export default function Footer() {
       <FooterInformationGrid>
         <FooterGridItem>
           <FooterText>Connect</FooterText>
-          <a href='https://www.instagram.com/aldersgallery/'>Instagram</a>
-          <a href='https://www.linkedin.com/in/alderwhiteford/'>LinkedIn</a>
+          <a href='https://www.instagram.com/aldersgallery/' target='_blank'>Instagram</a>
+          <a href='https://www.linkedin.com/in/alderwhiteford/' target='_blank'>LinkedIn</a>
         </FooterGridItem>
         <FooterGridItem>
           <FooterText>Get In Touch</FooterText>

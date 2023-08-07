@@ -1,9 +1,10 @@
+
 'use client'
 
 import styled, { keyframes } from 'styled-components'
 import { useEffect } from 'react'
 
-import HomeGridItem from '@/components/Home/Grid/HomeGridItem'
+import HomeGridItem from '@/components/Grid/HomeGridItem'
 import ServicesHome from '@/components/Home/Services/Services'
 import useParallax from '@/hooks/use-parallax'
 
@@ -55,16 +56,16 @@ export default function Home() {
   return (
     <>
       <HomeLandingContainer>
-        <HomeImage style={{ transform: `translateY(${parallaxValue}px)` }} src='https://i.imgur.com/GDczsMj.jpg'/>
+        <HomeImage style={{ transform: `translateY(${parallaxValue}px)` }} src='https://i.imgur.com/PI5VJGC.jpg'/>
         <HomeLogo src='https://i.imgur.com/uGZltjy.png'/>
       </HomeLandingContainer>
       <HomeGridContainer>
-        <HomeGridItem img='https://i.imgur.com/wV1YzCH.jpg' text='WORLD' href='/world'/>
-        <HomeGridItem img='https://i.imgur.com/LOHMpTi.jpg' text='PEOPLE' href='/people'/>
-        <HomeGridItem img='https://i.imgur.com/NKC2FRS.jpg' text='EVENTS' href='/events'/>
-        <HomeGridItem img='https://i.imgur.com/Up7OvpG.jpg' text='OTHER' href='/other'/>
+        <HomeGridItem img='https://i.imgur.com/eLW3Lxa.jpg' text='WORLD' href='/world' parallax={true}/>
+        <HomeGridItem img='https://i.imgur.com/uUbRfBZ.jpg' text='PEOPLE' href='/people' parallax={true}/>
+        <HomeGridItem img='https://i.imgur.com/TaHMESU.jpg' text='EVENTS' href='/events' parallax={true}/>
+        <HomeGridItem img='https://i.imgur.com/Oyk8vOL.jpg' text='OTHER' href='/other' parallax={true}/>
       </HomeGridContainer>
-      <ServicesHome img='https://i.imgur.com/e1yZW1y.jpg'/>
+      <ServicesHome img='https://i.imgur.com/Y7ncDjP.jpg'/>
     </>
   )
 }

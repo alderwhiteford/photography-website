@@ -1,6 +1,7 @@
 'use client'
 
 import styled from "styled-components"
+import Link from "next/link"
 
 const GridItemDarkCover = styled.div`
   position: absolute;
@@ -59,12 +60,14 @@ const GridItemLink = styled.a`
 export default function CategoryGridItem({ img, text, href }) {
 
   return (
-    <GridItemLink href={href}>
-      <GridItemDarkCover />
-      <GridItem>
-        <GridImage src={img} />
-        <GridItemTitle>{text}</GridItemTitle>
-      </GridItem>
-    </GridItemLink>
+    <Link href={href}>
+      <GridItemLink>
+        <GridItemDarkCover />
+        <GridItem>
+          <GridImage src={img} />
+          <GridItemTitle>{text}</GridItemTitle>
+        </GridItem>
+      </GridItemLink>
+    </Link>
   );
 }

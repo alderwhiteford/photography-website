@@ -1,9 +1,6 @@
 'use client'
 
 import styled from "styled-components"
-import useParallax from "@/hooks/use-parallax"
-import { useAnimation, useInView } from "framer-motion"
-import { useEffect, useState } from "react"
 
 const GridItemDarkCover = styled.div`
   position: absolute;

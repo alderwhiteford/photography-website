@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 
+import Link from 'next/link'
 import { useState } from 'react'
 
 
@@ -24,16 +25,16 @@ export default function Navbar() {
           <div className={`${navDropdown ? '' : 'hidden'} w-full mr-[2vw] md:block md:w-auto`} id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-[#fcfaf7]">
               <li>
-                <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fbb041] md:p-0">ALDER</a>
+                <Link href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fbb041] md:p-0">ALDER</Link>
               </li>
               <li>
-                <a href="/" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fbb041] md:p-0">WORK</a>
+                <Link href="/" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fbb041] md:p-0">WORK</Link>
               </li>
               <li>
-                <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fbb041] md:p-0 ">SERVICES</a>
+                <Link href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fbb041] md:p-0 ">SERVICES</Link>
               </li>
               <li>
-                <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fbb041] md:p-0">CONTACT</a>
+                <Link href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fbb041] md:p-0">CONTACT</Link>
               </li>
             </ul>
           </div>

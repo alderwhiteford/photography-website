@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, getDoc } from 'firebase/firestore/lite';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,11 +22,11 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Retrieve the locations for the World page: 
-async function getLocations() {
-  const locations = collection(db, 'World');
+async function getDocuments(path) {
+  const locations = collection(db, path);
   const locationsSnapshot = await getDocs(locations);
   const locationsList = locationsSnapshot.docs.map(doc => doc.data());
   return locationsList;
 }
 
-export { getLocations }
+export { getDocuments }

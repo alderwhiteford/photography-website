@@ -7,7 +7,7 @@ const GridItemDarkCover = styled.div`
   width: 100%;
   height: 100%;
   background-color: gray;
-  opacity: 30%;
+  opacity: 50%;
   z-index: 5;
   transition: 0.3s;
 `

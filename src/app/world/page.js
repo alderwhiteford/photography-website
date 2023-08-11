@@ -3,54 +3,39 @@
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
-import { getLocations } from "@/firebase/config"
 import styled from "styled-components"
 import { LoadingLogo } from "@/components/Loading/LoadingLogo"
 import { LoadingLogoContainer } from "@/components/Loading/LoadingLogo"
 import CategoryGridItem from "@/components/Grid/CategoryGridItem"
+import useGetDocuments from "@/hooks/use-documents";
 
 const WorldContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 2fr 1fr 1fr 1fr;
-  gap: 10px;
+  grid-template-rows: 2fr;
+  gap: 5px;
   padding: 50px; 
 `
 
 export default function Home() {
 
   const [locations, setLocations] = useState([]);
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const fetchLocations = async () => {
-      try {
-        const locationsData = await getLocations();
-        setLocations(locationsData);
-      } catch (error) {
-        console.error('Error fetching locations:', error);
-      }
-    };
-
-    fetchLocations();
-    setIsLoading(false)
-  }, []);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isBuffered, setIsBuffered] = useState(true);
+  useGetDocuments('World', setIsLoading, setIsBuffered, setLocations)
 
   return (
-     <WorldContainer>
-      {!isLoading ? 
-        locations.map((loc) => {
+    <>
+      <WorldContainer style={isBuffered ? {display: 'none'} : {display: 'grid'}}>
+        {locations.map((loc) => {
           return (
             <CategoryGridItem key={loc.title} text={loc.title} img={loc.image} href={loc.href}/>
           )
-        }) :
-        <>
-          <div className='placeholder'></div>
-          <LoadingLogoContainer>
-            <LoadingLogo src='https://i.imgur.com/uGZltjy.png'/>
-          </LoadingLogoContainer>
-        </>
-      }
-     </WorldContainer>
+        })}
+      </WorldContainer> :
+      <LoadingLogoContainer style={!isBuffered ? {display: 'none'} : {display: 'flex'}}>
+        <LoadingLogo src='https://i.imgur.com/uGZltjy.png'/>
+      </LoadingLogoContainer>
+    </>
   )
 }

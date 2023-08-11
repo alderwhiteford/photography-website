@@ -11,15 +11,16 @@ const spinAnimation = keyframes`
 
 const LoadingLogo = styled.img`
   width: 15vw;
+  height: 15vw;
+  margin: auto;
   animation: ${spinAnimation} 20s linear infinite;
-  align-self: center;
 `
 
 const LoadingLogoContainer = styled.div`
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 68vh;
+  display: flex; 
+  position: relative;
 `
 
 export { LoadingLogo, LoadingLogoContainer }

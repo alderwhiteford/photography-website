@@ -4,7 +4,7 @@ import NavButton from '@/components/Button/NavButton'
 import PhotoGridV1 from '@/components/Grid/PhotoGrid/PhotoGridV1'
 import PhotoGridV2 from '@/components/Grid/PhotoGrid/PhotoGridV2'
 import PhotoGridV3 from '@/components/Grid/PhotoGrid/PhotoGridV3'
-import { getLocationImages } from '@/firebase/config'
+import { getDocuments, getLocationImages } from '@/firebase/config'
 import useGetDocuments from '@/hooks/use-documents'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -28,14 +28,32 @@ const LocationHeadingContainer = styled.div`
   justify-content: space-between;
 `
 
+export async function generateStaticParams() {
+  return [
+    {
+      location: 'paris'
+    },
+    {
+      location: 'athens'
+    },
+    {
+      location: 'rome'
+    },
+    {
+      location: 'newyork'
+    }
+  ]
+}
+
 export default function Location() {
   const grid = useSearchParams().get('grid')
   const title = useSearchParams().get('title')
   const [images, setImages] = useState([]);
-  const [location, setLocation] = useState(useSearchParams().get('collection'))
-  const [locationCollection, setLocationCollection] = useState(usePathname().split('/')[2])
+  const location = useSearchParams().get('collection')
+  const locationCollection = usePathname().split('/')[2]
   const [isLoading, setIsLoading] = useState(true)
   const [isBuffered, setIsBuffered] = useState(true)
+
   useGetDocuments(`World/${location}/${locationCollection}`, setIsLoading, setIsBuffered, setImages)
 
   return (

@@ -17,7 +17,7 @@ export default function NavButton({ href, text }) {
   }
 
   return (
-    <div style={text === 'BACK' ? {display: 'flex', flexDirection: 'row'} : {display: 'flex', visibility: 'hidden'}} onClick={() => handleRouting()}>
+    <div style={text === 'BACK' ? {display: 'flex', flexDirection: 'row', cursor: 'pointer'} : {display: 'flex', visibility: 'hidden', cursor: 'pointer'}} onClick={() => handleRouting()}>
       {text === 'BACK' ? <ArrowBackIcon/> : <ArrowForwardIcon />}
       <ButtonText>{text}</ButtonText>
     </div>

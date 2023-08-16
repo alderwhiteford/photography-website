@@ -54,7 +54,7 @@ export default function Location({ params }) {
     <LocationContainer>
       <LocationHeadingContainer>
         <NavButton href='/' text='BACK'/>
-        <h1>{title}</h1>
+          <h1>{title}</h1>
         <NavButton href='/' text='HIDDEN'/>
       </LocationHeadingContainer>
       {grid === '1' ? <PhotoGridV1 data={images}/> 

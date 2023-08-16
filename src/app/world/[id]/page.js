@@ -10,6 +10,8 @@ import { usePathname, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
+export const dynamicParams = true
+
 const LocationContainer = styled.div`
   width: 100vw;
   display: flex;

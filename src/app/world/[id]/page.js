@@ -28,7 +28,16 @@ const LocationHeadingContainer = styled.div`
   justify-content: space-between;
 `
 
-export default function Location() {
+export async function generateStaticParams() {
+  const locations =[{id:'paris'},{id:'newyork'},{id:'athens'}]
+ 
+  return locations.map((post) => ({
+    id: post.id,
+  }))
+}
+
+export default function Location({ params }) {
+  console.log(`Welcome to ${params.id}`)
   const grid = useSearchParams().get('grid')
   const title = useSearchParams().get('title')
   const [images, setImages] = useState([]);

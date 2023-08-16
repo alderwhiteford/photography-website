@@ -28,7 +28,7 @@ const LocationHeadingContainer = styled.div`
   justify-content: space-between;
 `
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const locations =[{id:'paris'},{id:'newyork'},{id:'athens'}]
  
   return locations.map((post) => ({

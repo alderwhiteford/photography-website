@@ -28,23 +28,6 @@ const LocationHeadingContainer = styled.div`
   justify-content: space-between;
 `
 
-export async function generateStaticParams() {
-  return [
-    {
-      location: 'paris'
-    },
-    {
-      location: 'athens'
-    },
-    {
-      location: 'rome'
-    },
-    {
-      location: 'newyork'
-    }
-  ]
-}
-
 export default function Location() {
   const grid = useSearchParams().get('grid')
   const title = useSearchParams().get('title')

@@ -43,12 +43,12 @@ export default function Location({ params }) {
   const grid = useSearchParams().get('grid')
   const title = useSearchParams().get('title')
   const [images, setImages] = useState([]);
-  const location = useSearchParams().get('collection')
-  const locationCollection = usePathname().split('/')[2]
+  const locationDocument = useSearchParams().get('document')
+  const locationCollection = useSearchParams().get('collection')
   const [isLoading, setIsLoading] = useState(true)
   const [isBuffered, setIsBuffered] = useState(true)
 
-  useGetDocuments(`World/${location}/${locationCollection}`, setIsLoading, setIsBuffered, setImages)
+  useGetDocuments(`World/${locationCollection}/${locationDocument}`, setIsLoading, setIsBuffered, setImages)
 
   return (
     <LocationContainer>
